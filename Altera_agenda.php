@@ -17,7 +17,7 @@ $row = mysqli_fetch_array($result);
 <body>
     <h1>Alterar agenda</h1>
     
-    <form action="Altera_agenda_exe.php" method="post">
+    <form action="Altera_agenda_exe.php" method="post" enctype="multipart/form-data">
     <input name='id_agenda' type="hidden" value="<?php echo $row['id_agenda']?>">
     <div>
         <label for="nome">Nome</label>
@@ -51,7 +51,7 @@ $row = mysqli_fetch_array($result);
     </div>
     <div>
         <label for="telefone">Telefone</label>
-        <input type="tel" name="fone" id="fone" placeholder="Formato (18) 9999-8888" pattern="\([0-9]{2}\)[0-9]{4-5}-[0-9]{4}"
+        <input type="tel" name="telefone" id="telefone" placeholder="Formato (18) 9999-8888" pattern="\([0-9]{2}\)[0-9]{4-5}-[0-9]{4}"
         value="<?php echo $row['telefone']?>">
     </div>
     <div>
@@ -65,8 +65,11 @@ $row = mysqli_fetch_array($result);
     </div>
     <div>
         <label for="dt_cadastro">Data cadastro</label>
-        <input type="date" name="data" id="data"
+        <input type="date" name="dt_cadastro" id="dt_cadastro"
         value="<?php echo $row['dt_cadastro']?>">
+    </div>
+    <div>
+        <input type="file" name="foto" accept="image/*">
     </div>
     <input type="submit" value="Salvar">
     </form>

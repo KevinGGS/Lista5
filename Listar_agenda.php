@@ -14,13 +14,15 @@
     $row = mysqli_fetch_array($result); 
     ?>
     <h1>Consulta de agenda</h1>
-    <table align="center" border="1" width="500">
+    <table align="center" border="1" width="1300">
         <tr>
             <th>Codigo</th>
             <th>Nome</th>
+            <th>Foto</th>
             <th>Apelido</th>
             <th>Endereço</th>
             <th>Bairro</th>
+            <th>Cidade</th>
             <th>Estado</th>
             <th>Telefone</th>
             <th>Celular</th>
@@ -35,6 +37,10 @@
         echo"<tr>";
         echo"<td>". $row['id_agenda'] ."</td>";
         echo"<td>". $row['nome'] ."</td>";
+        if($row['foto'] == "")
+        echo "<td></td>";
+        else
+        echo "<td><img src=". $row['foto']. " width='90' height='100'/></td>";
         echo"<td>". $row['apelido'] ."</td>";
         echo"<td>". $row['endereco'] ."</td>";
         echo"<td>". $row['bairro'] ."</td>";
@@ -43,9 +49,9 @@
         echo"<td>". $row['telefone'] ."</td>";
         echo"<td>". $row['celular'] ."</td>";
         echo"<td>". $row['email'] ."</td>";
-        echo"<td>". $row['dt_usuario'] ."</td>";
-        echo "<td><a href='Altera_agenda.php?id_usuario=" .$row['id_agenda']."'>alterar</a></td>";
-        echo "<td><a href='Excluir_agenda.php?id_usuario=" .$row['id_agenda']."'>excluir</a></td>";
+        echo"<td>". $row['dt_cadastro'] ."</td>";
+        echo "<td><a href='Altera_agenda.php?id_agenda=" .$row['id_agenda']."'>alterar</a></td>";
+        echo "<td><a href='Excluir_agenda.php?id_agenda=" .$row['id_agenda']."'>excluir</a></td>";
         echo"</tr>";
         }
     }

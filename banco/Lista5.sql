@@ -15,5 +15,6 @@ CREATE TABLE agenda
     celular  varchar(50) NULL,
     email    varchar(30) NOT NULL,
     dt_cadastro    date not NULL,
+    foto          varchar(100) NULL,
     PRIMARy KEY (id_agenda)
 );

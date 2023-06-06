@@ -1,7 +1,7 @@
 <?php
 include('conexao.php');
 $id_agenda = $_GET['id_agenda'];
-$sql = "delete from usuario where id_usuario = '$id_agenda'";
+$sql = "delete from agenda where id_agenda = '$id_agenda'";
 $result = mysqli_query($con, $sql);
 if($result){
 echo "<script>alert('usuario excluido com  sucesso!');";
