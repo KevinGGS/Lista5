@@ -28,8 +28,7 @@ if($row > 0){
     echo "<a href='cadastro_agenda.html'>voltar</a>";
     exit();
 }
-else
-{
+
 echo "<h1>Dados do agenda</h1>";
 echo "Nome: $nome <br>";
 echo "Apelido: $apelido <br>";
@@ -45,7 +44,6 @@ echo "Data Cadastro: $dt_cadastro <br>";
 $sql = "INSERT INTO agenda (nome, apelido, endereco, bairro, cidade, estado, telefone, celular, email, dt_cadastro, foto)";
 $sql .= "VALUES ('".$nome."','".$apelido."','".$endereco."','".$bairro."','".$cidade."','".$estado."','".$telefone."','".$celular."','".$email."','".$dt_cadastro."','".$nome_foto."')";
 
-echo $sql."<br>";
 $result = mysqli_query($con, $sql);
 if($result){
 echo "Dados cadastrados com sucesso!";
@@ -54,6 +52,6 @@ else
 {
 echo "Erro ao tentar cadastrar!";
 }
-}
+
 
 ?>

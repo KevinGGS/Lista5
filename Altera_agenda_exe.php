@@ -25,7 +25,6 @@ echo "<h1>Alteração de dados</h1>";
 echo "<p>Usuario: $nome</p>";
 $sql = "update agenda set nome = '$nome', apelido = '$apelido', endereco = '$endereco', bairro = '$bairro', cidade = '$cidade', estado = '$estado', telefone = '$telefone', celular = '$celular', email = '$email', dt_cadastro = '$dt_cadastro', foto = '$nome_foto' where id_agenda = '$id_agenda'";
 
-echo $sql;
 $result = mysqli_query($con, $sql);
 if($result)
 echo "Dados alterados com sucesso<br>";

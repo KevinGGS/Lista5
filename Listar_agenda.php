@@ -58,5 +58,6 @@
         while($row = mysqli_fetch_array($result))
         ?>
     </table>
+    <a href="index.php">voltar</a>
 </body>
 </html>
