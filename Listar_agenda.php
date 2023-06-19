@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -14,20 +15,20 @@
     $row = mysqli_fetch_array($result); 
     ?>
     <h1>Consulta de agenda</h1>
-    <table align="center" border="1" width="1300">
+    <table align="center" width="1300" class="table">
         <tr>
-            <th>Codigo</th>
-            <th>Nome</th>
-            <th>Foto</th>
-            <th>Apelido</th>
-            <th>Endereço</th>
-            <th>Bairro</th>
-            <th>Cidade</th>
-            <th>Estado</th>
-            <th>Telefone</th>
-            <th>Celular</th>
-            <th>E-mail</th>
-            <th>Data cadastro</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Apelido</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Celular</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Data cadastro</th>
         </tr>
 
         <?php
@@ -50,14 +51,14 @@
         echo"<td>". $row['celular'] ."</td>";
         echo"<td>". $row['email'] ."</td>";
         echo"<td>". $row['dt_cadastro'] ."</td>";
-        echo "<td><a href='Altera_agenda.php?id_agenda=" .$row['id_agenda']."'>alterar</a></td>";
-        echo "<td><a href='Excluir_agenda.php?id_agenda=" .$row['id_agenda']."'>excluir</a></td>";
+        echo "<td><a  href='Altera_agenda.php?id_agenda=" .$row['id_agenda']."'>alterar</a></td>";
+        echo "<td><a  href='Excluir_agenda.php?id_agenda=" .$row['id_agenda']."'>excluir</a></td>";
         echo"</tr>";
         }
     }
         while($row = mysqli_fetch_array($result))
         ?>
     </table>
-    <a href="index.php">voltar</a>
+    <a class="btn btn-outline-secondary" href="index.php">voltar</a>
 </body>
 </html>

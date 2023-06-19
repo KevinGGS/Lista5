@@ -25,7 +25,7 @@ $row = mysqli_num_rows($result);
 
 if($row > 0){
     echo "<h1>usuario já tem cadastro</h1>";
-    echo "<a href='cadastro_agenda.html'>voltar</a>";
+    echo "<a class="btn btn-outline-secondary" href='cadastro_agenda.html'>voltar</a>";
     exit();
 }
 
